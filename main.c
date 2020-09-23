@@ -21,17 +21,17 @@ int main()
     char ip[DL], log[DL];       // параметры по умолчанию
     char mode[] = "single";   //  в строки записанны слова. Слова сравниваются с параметрами, полученными из командной строки
     
-    char str_ip[]="--ip";       //  записанны в строках для более простой замены
-    char str_p1[]="-p";     char str_p2[]="--port";
-    char str_a1[]="-a";     char str_a2[]="--addr";
-    char str_r1[]="-r";     char str_r2[]="--reg";
-    char str_c1[]="-c";     char str_c2[]="--count";
-    char str_m1[]="-m";     char str_m2[]="--mode";
-    char str_log[]="--log"; 
-    char str_in1[]="-i";    char str_in2[]="--interval";
-    char str_t1[]="-t";     char str_t2[]="--timeout";
-    char str_hex[]="--hex";
-    char str_help1[]="-h";  char str_help2[]="--help";
+    char str_ip1[]="--ip";    char str_ip2[]="--ip";      //  записанны в строках для более простой замены
+    char str_p1[]="-p";       char str_p2[]="--port";          char str_p3[]="port";
+    char str_a1[]="-a";       char str_a2[]="--addr";          char str_a3[]="addr";
+    char str_r1[]="-r";       char str_r2[]="--reg";           char str_r3[]="reg";
+    char str_c1[]="-c";       char str_c2[]="--count";         char str_c3[]="count";
+    char str_m1[]="-m";       char str_m2[]="--mode";          char str_m3[]="mode";
+    char str_log1[]="--log";  char str_log2[]="--log";
+    char str_in1[]="-i";      char str_in2[]="--interval";     char str_in3[]="interval";
+    char str_t1[]="-t";       char str_t2[]="--timeout";       char str_t3[]="timeout";
+    char str_hex1[]="--hex";
+    char str_help1[]="-h";    char str_help2[]="--help";        
     int port, addr, reg, count, interval, timeout, hex;
     port = 502;        //  порт default
     addr = 1;          //  Модбас адрес устройства
@@ -105,12 +105,12 @@ int main()
             a=a+2;
             continue;               // значение обнаружено
             }
-         if (strcmp(param[a], str_hex) == 0){                                         //  система счисления
+         if (strcmp(param[a], str_hex1) == 0){                                         //  система счисления
             hex=1;                     // записываем значение                            printf("Некс \n");
             a=a+1;
             continue;               // значение обнаружено
             }
-         if (strcmp(param[a], str_ip) == 0){                                          // IP          
+         if (strcmp(param[a], str_ip1) == 0){                                          // IP          
             strcpy(ip,param[a+1]);  // копируем значение ip в память        записываем IP адресс               printf("IP= %s\n", ip);
             a=a+2;
             continue;               // значение обнаружено
@@ -120,7 +120,7 @@ int main()
             a=a+2;
             continue;               // значение обнаружено
             }
-         if (strcmp(param[a], str_log) == 0){                                         // файл для записи
+         if (strcmp(param[a], str_log1) == 0){                                         // файл для записи
             strcpy(log,param[a+1]);  // копируем название файла в память        записываем адрес            printf("log= %s\n", log);
             a=a+2;
             continue;               // параметр распознан
